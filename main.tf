@@ -3,6 +3,11 @@ data "azurerm_key_vault" "azure_vault" {
   resource_group_name = var.keyvault_rg
 }
 
+data "azurerm_user_assigned_identity" "example" {
+  name                = var.managed_identity_name
+  resource_group_name = var.managed_identity_rg
+}
+
 data "azurerm_key_vault_secret" "ssh_public_key" {
   name         = var.sshkvsecret
   key_vault_id = data.azurerm_key_vault.azure_vault.id
