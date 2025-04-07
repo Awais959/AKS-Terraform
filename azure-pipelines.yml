@@ -9,24 +9,18 @@ pool:
   name: 'Default'  # Replace with your self-hosted pool name
 
 steps:
-- task: TerraformCLI@2
+
+- task: TerraformCLI@0
+  displayName: 'Terraform Init'
   inputs:
     command: 'init'
-    backendType: 'azurerm'
-    allowTelemetryCollection: true
 
-- task: TerraformCLI@2
-  displayName: Terraform Plan
+- task: TerraformCLI@0
+  displayName: 'Terraform Plan'
   inputs:
     command: 'plan'
-    environmentServiceName: 'tf_Identity'
-    allowTelemetryCollection: false
 
-- task: TerraformCLI@2
-  displayName: Terraform Apply
+- task: TerraformCLI@0
+  displayName: 'Terraform Apply'
   inputs:
     command: 'apply'
-    environmentServiceName: 'tf_Identity'
-    allowTelemetryCollection: true
-
-
