@@ -6,7 +6,7 @@ variable "managed_identity_name" {
     type = string
 }
 
-variable "managed_identity_name" {
+variable "managed_identity_rg" {
     type = string
 }
 
