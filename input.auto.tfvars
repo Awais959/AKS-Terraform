@@ -8,7 +8,7 @@ vnetcidr = ["10.0.0.0/24"]
 
 subnetcidr = ["10.0.0.0/25"]
 
-keyvault_rg = "aksdemo-rg"
+keyvault_rg = "aksdemo959-rg"
 
 keyvault_name = "aksdemocluster95900-kv"
 
