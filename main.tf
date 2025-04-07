@@ -3,7 +3,7 @@ data "azurerm_key_vault" "azure_vault" {
   resource_group_name = var.keyvault_rg
 }
 
-data "azurerm_user_assigned_identity" "example" {
+data "azurerm_user_assigned_identity" "azure_user_assigned_managed_identity" {
   name                = var.managed_identity_name
   resource_group_name = var.managed_identity_rg
 }
@@ -60,7 +60,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   identity {
     type = "UserAssigned"
     identity_ids = [
-      data.azurerm_key_vault_secret.spn_id.value
+      data.azurerm_user_assigned_identity.azure_user_assigned_managed_identity.id
     ]
   }
 
