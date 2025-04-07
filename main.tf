@@ -62,9 +62,11 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     enabled = true
   }
 
-  service_principal {
-    client_id     = data.azurerm_key_vault_secret.spn_id.value
-    client_secret = data.azurerm_key_vault_secret.spn_secret.value
+identity {
+    type = "UserAssigned"
+    user_assigned_identity_ids = [
+      data.azurerm_key_vault_secret.spn_id.value
+    ]
   }
 
   tags = {
