@@ -10,17 +10,18 @@ pool:
 
 steps:
 
-- task: TerraformCLI@0
-  displayName: 'Terraform Init'
+- task: TerraformTaskV4@4
   inputs:
+    provider: 'azurerm'
     command: 'init'
-
-- task: TerraformCLI@0
-  displayName: 'Terraform Plan'
+    backendServiceArm: 'tf_Identity'
+- task: TerraformTaskV4@4
   inputs:
+    provider: 'azurerm'
     command: 'plan'
+    environmentServiceNameAzureRM: 'tf_Identity'
 
-- task: TerraformCLI@0
-  displayName: 'Terraform Apply'
+- task: TerraformTaskV4@4
   inputs:
+    provider: 'azurerm'
     command: 'apply'
