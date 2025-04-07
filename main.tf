@@ -56,9 +56,9 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 
 identity {
     type = "UserAssigned"
-    user_assigned_identity_ids = [
-      data.azurerm_key_vault_secret.spn_id.value
-    ]
+    user_assigned_identity_ids {
+     id = data.azurerm_key_vault_secret.spn_id.value
+    }
   }
 
   tags = {
