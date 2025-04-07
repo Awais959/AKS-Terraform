@@ -16,7 +16,6 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'tf_Identity'
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
