@@ -4,8 +4,6 @@ sshkvsecret = "akssshpubkey"
 
 clientidkvsecret = "spn-id"
 
-spnkvsecret = "spn-secret"
-
 vnetcidr = ["10.0.0.0/24"]
 
 subnetcidr = ["10.0.0.0/25"]
