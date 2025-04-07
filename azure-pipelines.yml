@@ -9,20 +9,19 @@ pool:
   name: 'Default'  # Replace with your self-hosted pool name
 
 steps:
-- task: TerraformCLI@0
-  displayName: Terraform Init
+- task: TerraformCLI@2
   inputs:
     command: 'init'
     allowTelemetryCollection: true
 
-- task: TerraformCLI@0
+- task: TerraformCLI@2
   displayName: Terraform Plan
   inputs:
     command: 'plan'
     environmentServiceName: 'tf_Identity'
     allowTelemetryCollection: false
 
-- task: TerraformCLI@0
+- task: TerraformCLI@2
   displayName: Terraform Apply
   inputs:
     command: 'apply'
