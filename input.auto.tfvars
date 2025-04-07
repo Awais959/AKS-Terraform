@@ -2,6 +2,10 @@ aks_vnet_name = "aksvnet"
 
 sshkvsecret = "akssshpubkey"
 
+managed_identity_name = "tfstateidentity"
+
+managed_identity_rg = "rg-ep10-othghhvx"
+
 clientidkvsecret = "spn-id"
 
 vnetcidr = ["10.0.0.0/24"]
