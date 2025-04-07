@@ -9,6 +9,8 @@ pool:
   name: 'Default'  # Replace with your self-hosted pool name
 
 steps:
+- task: JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@1
+  displayName: 'Install Terraform'
 
 - task: TerraformTaskV4@4
   inputs:
