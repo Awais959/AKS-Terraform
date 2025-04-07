@@ -12,10 +12,6 @@ data "azurerm_key_vault_secret" "spn_id" {
   name         = var.clientidkvsecret
   key_vault_id = data.azurerm_key_vault.azure_vault.id
 }
-data "azurerm_key_vault_secret" "spn_secret" {
-  name         = var.spnkvsecret
-  key_vault_id = data.azurerm_key_vault.azure_vault.id
-}
 
 resource "azurerm_virtual_network" "aks_vnet" {
   name                = var.aks_vnet_name
