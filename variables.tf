@@ -2,6 +2,14 @@ variable "aks_vnet_name" {
     type = string
 }
 
+variable "managed_identity_name" {
+    type = string
+}
+
+variable "managed_identity_name" {
+    type = string
+}
+
 variable "keyvault_rg" {
   type    = string
 }
