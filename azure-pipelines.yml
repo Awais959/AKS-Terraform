@@ -25,3 +25,5 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'apply'
+    environmentServiceNameAzureRM: 'tf_Identity'
+
