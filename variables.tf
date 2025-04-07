@@ -25,10 +25,6 @@ variable "subnetcidr" {
   type    = list
 }
 
-variable "spnkvsecret" {
-  type    = string
-}
-
 variable "azure_region" {
   type    = string
 }
