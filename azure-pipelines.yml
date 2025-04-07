@@ -16,6 +16,13 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
+    backendType: 'azurerm'
+    backendServiceArm: 'tf_Identity'
+    backendAzureRmResourceGroupName: 'rg-strg'
+    backendAzureRmStorageAccountName: 'strg009'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'terraform.tfstate'
+  displayName: 'Terraform Init'
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
