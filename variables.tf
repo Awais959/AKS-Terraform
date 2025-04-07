@@ -47,6 +47,10 @@ variable "cluster_name" {
   type    = string
 }
 
+variable "acrname" {
+  type    = string
+}
+
 #AKS DNS name
 variable "dns_name" {
   type    = string

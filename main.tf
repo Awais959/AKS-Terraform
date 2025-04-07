@@ -68,3 +68,19 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     Environment = "Demo"
   }
 }
+
+resource "azurerm_container_registry" "acr" {
+  name                = var.acrname
+  resource_group_name = azurerm_resource_group.aks_rg.name
+  location            = azurerm_resource_group.aks_rg.location
+  sku                 = "Basic"
+  admin_enabled       = true
+}
+
+
+resource "azurerm_role_assignment" "acrpull_role" {
+  principal_id                     = data.azurerm_key_vault_secret.spn_id.value
+  role_definition_name             = "AcrPull"
+  scope                            = azurerm_container_registry.acr.id
+  skip_service_principal_aad_check = true
+}
